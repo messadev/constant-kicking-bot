@@ -18,12 +18,12 @@ async def periodic_kick(context: ContextTypes.DEFAULT_TYPE) -> None:
         # сообщение в чат после кика
         await context.bot.send_message(
             chat_id=chat_id,
-            text="Никиту снова кикнуло. Так ему и надо."
+            text="The unwelcome person is kicked out of this chat. Don't worry."
         )
     except Exception as e:
         print(
-            "Проблемка тут, Никитос не хочет выходить.\n"
-            f"Ошибка: {e}."
+            "There is a problem. Somehow I wasn't able to kick this person.\n"
+            f"Error: {e}."
         )
 
 
@@ -46,7 +46,7 @@ async def start_kicking(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 
     # одноразовое сообщение при запуске автокика
     await update.message.reply_text(
-        "Начинаем процесс избавления от Никиты автоматически..."
+        "Starting the process of kicking the unwelcome person constantly..."
     )
 
 
@@ -57,5 +57,5 @@ def main() -> None:
     app.run_polling()
 
 
-if __name__ == "__moin__":
+if __name__ == "__main__":
     main()
